@@ -1,0 +1,373 @@
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+}
+/* Asegura que el contenido empuje el footer hacia abajo */
+body, html {
+    min-height: 100vh; /* La página debe ocupar al menos el 100% de la ventana */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.main-content {
+    flex: 1; /* Ocupa todo el espacio posible entre el header y el footer */
+}
+body { 
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Previene desplazamientos horizontales */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #003e61;
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    top: 0;
+}
+/*----------------FOOTER---------------------------------------*/
+.footer {
+    background-color: #003e61;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    clear: both;
+    position: relative; /* Asegura que el footer sea relativo y no fijo */
+
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* Secciones dentro del footer */
+/*----------------FOOTER---------------------------------------*/
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+}
+
+/* Secciones dentro del footer */
+.footer-bottom {
+    background-color: #003e61;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: #f5f5f5;
+}
+
+/* Iconos de redes sociales */
+.footer-section.social a {
+    display: flex; /* Alinea el icono con el texto */
+    align-items: center; /* Centra el contenido verticalmente */
+    gap: 10px; /* Espacio entre icono y texto */
+    color: white; /* Color del texto */
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para los iconos de redes sociales */
+.footer-section.social a .social-icon {
+    width: 15px;  /* Ancho del icono */
+    height: 15px; /* Alto del icono */
+    object-fit: contain; /* Asegura que la imagen se ajuste bien dentro del espacio */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en el enlace */
+.footer-section.social a:hover {
+    color: #f5f5f5; /* Cambia el color del texto */
+}
+
+.footer-section.social a:hover .social-icon {
+    transform: scale(1.2); /* Aumenta el tamaño del icono ligeramente */
+}
+
+
+/* ------------------ Sidebar -------------------------- */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    width: 200px;
+    height: 100%;
+    padding-top: 20px;
+    background-color: #f8f9fa;
+    z-index: 1000;
+    animation: slide-bottom .5s cubic-bezier(.25, .46, .45, .94) both; /* Aplicamos la animación */
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    transform: scale(1.1);
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+
+/* ------------------ Sidebar -------------------------- */
+
+/* Main Content */
+.main-content {
+    margin-left: 220px;
+    padding-top: 70px; /* Altura de la navbar */
+    padding-bottom: 70px; /* Altura del footer */
+    padding: 50px;
+}
+
+/* Feed Container */
+.feed-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario de publicación */
+.post-form {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Publicaciones */
+.publicacion-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Cabecera de publicación */
+.publicacion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Información del autor */
+.autor-info {
+    display: flex;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nombre-autor {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.fecha-publicacion {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Contenido de la publicación */
+.publicacion-contenido h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.publicacion-contenido p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+/* Archivos adjuntos */
+.archivos-adjuntos {
+    margin-top: 15px;
+}
+.vista-previa-imagen {
+    max-width: 800px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+/* Enlaces */
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Espaciado entre Feed y Post Form */
+.feed-container,
+.post-form {
+    margin-right: 400px;
+}
+
+/* Ícono y menú de edición */
+.config-icon {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.edit-menu {
+    display: none;
+    position: absolute;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.edit-menu .form-control {
+    width: 100%;
+    min-height: 60px;
+}
+
+.edit-menu button {
+    width: 100%;
+}
+
+.edit-menu .form-control {
+    width: 400px;
+    height: 100px;
+}
+.custom-like {
+    background-color: transparent;
+    border: none;
+    color: #198754; /* Verde (Bootstrap success) */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.custom-like.active {
+    color: #ffffff; /* Blanco cuando está activo */
+    background-color: #198754;
+    border-radius: 20px;
+}
+/* Estilo personalizado para el botón de Dislike */
+.custom-dislike {
+    background-color: transparent;
+    border: none;
+    color: #dc3545; /* Rojo (Bootstrap danger) */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.custom-dislike.active {
+    color: #ffffff; /* Blanco cuando está activo */
+    background-color: #dc3545;
+    border-radius: 20px;
+}
+/* Efecto hover para ambos botones */
+.custom-like:hover, .custom-dislike:hover {
+    opacity: 0.8;
+}
+.post-form button[type="submit"] {
+    background-color: transparent; /* Fondo transparente */
+    color: #007bff; /* Color azul para el texto */
+    border: none; /* Sin bordes */
+    padding: 0; /* Elimina el padding */
+    font-size: 18px; /* Tamaño de fuente ajustado */
+    font-weight: bold; /* Fuente en negrita */
+    text-decoration: underline; /* Subrayado para indicar interactividad */
+    cursor: pointer; /* Cursor de mano al pasar el mouse */
+    transition: color 0.3s ease, transform 0.2s ease; /* Efecto al pasar el mouse */
+    display: block; /* Para centrarlo */
+    margin: 20px auto; /* Centrado horizontal */
+    text-align: center; /* Texto centrado */
+}
+
+
+.post-form .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.post-form .form-group input,
+.post-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    resize: none; /* Evita redimensionar el textarea */
+}
+/* Mejora para el campo de archivo */
+.post-form .form-group input[type="file"] {
+    padding: 5px;
+}
+
+/* Efecto hover para el botón */
+.post-form button[type="submit"]:hover {
+    background-color: #ffffff; /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
